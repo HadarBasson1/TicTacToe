@@ -23,11 +23,14 @@ public class PlayersPage extends AppCompatActivity {
 
     public void SubmitBtnClick (View view){
         String player1Name = player1.getText().toString();
+        if (player1Name.isEmpty()) {player1Name = "player 1" ;}
+
         String player2Name = player2.getText().toString();
+        if (player2Name.isEmpty()) {player2Name = "player 2" ;}
 
         Intent intent = new Intent(this,GameDisplay.class);
         intent.putExtra("PLAYER_NAMES",new String[] {player1Name,player2Name});
         startActivity(intent);
-
+finish();
     }
 }
